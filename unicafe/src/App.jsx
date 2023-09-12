@@ -28,27 +28,21 @@ const App = () => {
   const parts = [
     {
       name: 'Good',
-      score: 6
     },
     {
       name: 'Neutral',
-      score: 7
     },
     {
       name: 'Bad',
-      score: 1
     },
     {
       name: 'All',
-      score: 9
     },
     {
       name: 'Average',
-      score: 14
     },
     {
       name: 'Positive',
-      score: 14
     }
   ]  
 
@@ -80,7 +74,7 @@ const App = () => {
         <Part part={parts[2].name} types={bad} />
         <Part part={parts[3].name} types={allTypes} />
         <Part part={parts[4].name} types={ (allTypes)/3 } />
-        <Part part={parts[5].name} types={ positiveTypes/allTypes * 100 + "%" } />
+        <Part part={parts[5].name} types={ allTypes !== 0 ? (positiveTypes/allTypes * 100) + "%" : 0 } />
       </div>
     )
   }
