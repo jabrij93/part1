@@ -10,17 +10,17 @@ const App = () => {
   const [bad, setBad] = useState(0)
 
   const handleClickGood = (types) => {
-    console.log("test ", types);
+    console.log(types);
     setGood(good + 1);
   }
 
   const handleClickNeutral = (types) => {
-    console.log("test ", types);
+    console.log(types);
     setNeutral(neutral + 1);
   }
 
   const handleClickBad = (types) => {
-    console.log("test ", types);
+    console.log(types);
     setBad(bad + 1);
   }
 
@@ -72,8 +72,6 @@ const App = () => {
   const Content = (props) => {
     const allTypes = good + neutral + bad;
     const positiveTypes = good + neutral;
-    console.log(typeof good, typeof neutral, typeof bad);
-    console.log('allTypes:', allTypes, 'positiveTypes:', positiveTypes);
 
     return (
       <div>
