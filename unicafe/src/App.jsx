@@ -1,5 +1,6 @@
 import Button from './Components/Button';
 import Display from './Components/Display';
+import './StatisticLine.css';
 
 import { useState } from 'react'
 
@@ -54,27 +55,36 @@ const App = () => {
     )
   }
 
-  const Part = (props) => {
+  const StatisticLine = (props) => {
+
     return (
       <div>
-        <p>{props.part} {props.types}</p>
+        <table className="statisticLineTable">
+          <tr>
+            <td className="part">{props.part}</td>
+            <td className="types">{props.types}</td>
+          </tr>
+        </table>
       </div>
     )
   }
-
 
   const Content = (props) => {
     const allTypes = good + neutral + bad;
     const positiveTypes = good + neutral;
 
+    if (allTypes === 0) {
+      return <div>No feedback given</div>;
+    }
+
     return (
       <div>
-        <Part part={parts[0].name} types={good}/> 
-        <Part part={parts[1].name} types={neutral} />
-        <Part part={parts[2].name} types={bad} />
-        <Part part={parts[3].name} types={allTypes} />
-        <Part part={parts[4].name} types={ (allTypes)/3 } />
-        <Part part={parts[5].name} types={ allTypes !== 0 ? (positiveTypes/allTypes * 100) + "%" : 0 } />
+        <StatisticLine part={parts[0].name} types={good}/> 
+        <StatisticLine part={parts[1].name} types={neutral} />
+        <StatisticLine part={parts[2].name} types={bad} />
+        <StatisticLine part={parts[3].name} types={allTypes} />
+        <StatisticLine part={parts[4].name} types={ (allTypes)/3 } />
+        <StatisticLine part={parts[5].name} types={ allTypes !== 0 ? (positiveTypes/allTypes * 100) + "%" : 0 } />
       </div>
     )
   }

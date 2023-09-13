@@ -1,0 +1,4 @@
+.statisticLineTable td.part {
+    width: 60px;  /* You can adjust this width according to your need */
+    padding-right: 5px;  /* Optional padding for better spacing */
+  }

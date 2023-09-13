@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+
+.statisticLineTable td.part {
+  width: 150px;  /* You can adjust this width according to your need */
+  text-align: right;
+  padding-right: 10px;  /* Optional padding for better spacing */
+}
+
+.statisticLineTable td.types {
+  text-align: left;
+}
